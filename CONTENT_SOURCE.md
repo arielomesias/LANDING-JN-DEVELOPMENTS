@@ -2,7 +2,7 @@
 
 ## Business Name
 
-JN Development
+JN Developments
 
 ## Phone
 
@@ -67,7 +67,9 @@ We help homeowners, contractors, and developers obtain plans and permits.
 
 - ADU
 - Remodel
+- Single Family Dwelling
 - Duplex
+- Residential Building
 - Apartment Buildings
 - Commercial Buildings
 - Tract Map

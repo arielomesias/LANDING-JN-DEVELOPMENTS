@@ -79,44 +79,15 @@ if (revealItems.length) {
 }
 
 if (form && status) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", () => {
+    const submitButton = form.querySelector('button[type="submit"]');
 
-    const formData = new FormData(form);
-    const requiredFields = [
-      ["name", "Please enter your name."],
-      ["phone", "Please enter your phone number."],
-      ["email", "Please enter your email."],
-      ["projectType", "Please choose a project type."],
-      ["cityArea", "Please enter your city or project area."],
-      ["projectDescription", "Please add a short project description."]
-    ];
-
-    for (const [field, message] of requiredFields) {
-      const value = (formData.get(field) || "").toString().trim();
-      if (!value) {
-        status.textContent = message;
-        status.style.color = "#9f2c2c";
-        const control = form.elements.namedItem(field);
-        if (control && typeof control.focus === "function") {
-          control.focus();
-        }
-        return;
-      }
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
     }
 
-    if (!formData.get("consent")) {
-      status.textContent = "Please confirm the consent checkbox before submitting.";
-      status.style.color = "#9f2c2c";
-      const consent = form.elements.namedItem("consent");
-      if (consent && typeof consent.focus === "function") {
-        consent.focus();
-      }
-      return;
-    }
-
-    status.textContent = "Thanks. We received your project details and will follow up about your consultation.";
-    status.style.color = "#1d6a4e";
-    form.reset();
+    status.textContent = "Sending your project details...";
+    status.style.color = "#263d50";
   });
 }
