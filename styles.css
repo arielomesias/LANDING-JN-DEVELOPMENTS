@@ -151,6 +151,15 @@ button,
   pointer-events: none;
 }
 
+.thank-you-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.thank-you-card .eyebrow {
+  color: var(--accent-deep);
+}
+
 .thank-you-mark {
   width: 4.35rem;
   height: 4.35rem;
@@ -177,6 +186,7 @@ button,
   font-size: clamp(2.35rem, 5vw, 4.15rem);
   line-height: 1.04;
   letter-spacing: -0.035em;
+  color: var(--ink);
 }
 
 .thank-you-copy {
